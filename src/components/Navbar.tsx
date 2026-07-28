@@ -64,29 +64,25 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        {/* Logo & Brand Name */}
-        <a href="/" className="flex items-center gap-3 shrink-0 group">
+        {/* Logo */}
+        <a href="/" className="flex items-center shrink-0 group">
           {!hasLogoError ? (
             <img 
               src={LOGO_CANDIDATES[logoIndex]} 
               alt="Prop Industries Logo" 
-              className="h-9 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105"
               onError={handleLogoError}
             />
           ) : (
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#A71920] to-[#4A0A10] flex items-center justify-center border border-white/20 shadow-md group-hover:scale-105 transition-transform">
-              <span className="text-white font-extrabold text-xl tracking-wider uppercase">P</span>
+            <div className="flex items-center gap-2">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#A71920] to-[#4A0A10] flex items-center justify-center border border-white/20 shadow-md group-hover:scale-105 transition-transform">
+                <span className="text-white font-black text-xl tracking-wider uppercase">P</span>
+              </div>
+              <span className="text-white font-extrabold text-lg tracking-tight">
+                PROP <span className="text-[#A71920]">INDUSTRIES</span>
+              </span>
             </div>
           )}
-
-          <div className="flex flex-col">
-            <span className="text-white font-bold text-lg sm:text-xl tracking-tight leading-none group-hover:text-white/90 transition-colors">
-              Prop <span className="text-[#A71920]">Industries</span>
-            </span>
-            <span className="text-[10px] text-white/70 tracking-widest uppercase font-medium mt-0.5">
-              Success Through Insight
-            </span>
-          </div>
         </a>
 
         {/* Desktop Navigation */}

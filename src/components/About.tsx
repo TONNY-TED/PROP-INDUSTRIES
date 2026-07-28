@@ -80,7 +80,6 @@ const About = () => {
             className="text-gray-600 text-base sm:text-lg max-w-xl leading-relaxed"
           >
             Prop Industries is a forward-thinking technology company delivering software development, web engineering, IoT systems, brand identity, and IT consulting to help businesses achieve sustainable digital transformation.
-
           </motion.p>
         </div>
 

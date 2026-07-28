@@ -47,23 +47,24 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand Info */}
           <div className="space-y-4">
-            <a href="/" className="flex items-center gap-3 group">
-              {!hasLogoError && (
+            <a href="/" className="flex items-center shrink-0 group">
+              {!hasLogoError ? (
                 <img 
                   src={LOGO_CANDIDATES[logoIndex]} 
                   alt="Prop Industries Logo" 
-                  className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
+                  className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105"
                   onError={handleLogoError}
                 />
+              ) : (
+                <div>
+                  <span className="text-xl font-extrabold tracking-wider text-white block leading-none">
+                    PROP INDUSTRIES
+                  </span>
+                  <span className="text-[10px] text-red-200/80 font-bold uppercase tracking-widest block mt-0.5">
+                    Success Through Insight
+                  </span>
+                </div>
               )}
-              <div>
-                <span className="text-xl font-extrabold tracking-wider text-white block leading-none">
-                  PROP INDUSTRIES
-                </span>
-                <span className="text-[10px] text-red-200 font-bold uppercase tracking-widest block mt-0.5">
-                  Success Through Insight
-                </span>
-              </div>
             </a>
 
             <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
