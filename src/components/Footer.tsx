@@ -158,8 +158,8 @@ const Footer = () => {
             <ul className="space-y-3 text-xs sm:text-sm text-white/80">
               <li className="flex items-start gap-3">
                 <Phone size={16} className="text-[#A71920] shrink-0 mt-0.5" />
-                <a href="tel:+2656464291" className="hover:text-white transition-colors">
-                  +265 646 4291
+                <a href="tel:+265996464291" className="hover:text-white transition-colors">
+                  +265 996 464 291
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -175,7 +175,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-[#A71920] shrink-0 mt-0.5" />
-                <span>Lilongwe, Malawi</span>
+                <span>Blantyre, Malawi</span>
               </li>
             </ul>
           </div>

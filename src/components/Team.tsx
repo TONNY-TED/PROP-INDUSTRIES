@@ -29,35 +29,35 @@ const teamMembers: TeamMember[] = [
   {
     id: "sam",
     name: "Sam Chibambo",
-    role: "Marketing Director",
-    category: "Marketing & Growth",
-    bio: "Strategic growth leader overseeing corporate communications, digital marketing campaigns, brand elevation, and strategic client partnerships.",
-    expertise: ["Digital Marketing", "Brand Strategy", "Client Relations"],
+    role: "CEO at Funsa Suppliers & Marketing Officer at Prop Industries",
+    category: "Executive & Marketing",
+    bio: "Strategic business executive serving as CEO at Funsa Suppliers and Marketing Officer at Prop Industries, leading corporate growth, marketing campaigns, and commercial partnerships.",
+    expertise: ["Marketing Strategy", "Executive Leadership", "Brand Elevation"],
     email: "schibambo@propindustries.com",
     imageFileName: "sam.png",
     initials: "SC"
   },
   {
-    id: "sangwani",
-    name: "Sangwani Chimpololo",
-    role: "Lead IoT & Hardware Engineer",
-    category: "Smart Systems & Hardware",
-    bio: "Pioneer in embedded systems and microcontrollers, bridging hardware sensor arrays with real-time software dashboards for industrial and health automation.",
-    expertise: ["Embedded Hardware", "Microcontrollers", "Telemetry Systems"],
-    email: "schimpololo@propindustries.com",
-    imageFileName: "sangwani.png",
-    initials: "SC"
+    id: "francis",
+    name: "Francis Manjomo",
+    role: "CEO at Epic Inc., Graphic Designer, ICT Trainer & Community Lead",
+    category: "Creative & ICT Lead",
+    bio: "CEO at Epic Inc., creative graphic designer, ICT trainer, and community lead driving brand design, digital media, workforce training, and youth community development.",
+    expertise: ["Graphic Design", "ICT Training", "Community Leadership", "Brand Identity"],
+    email: "fmanjomo@propindustries.com",
+    imageFileName: "francis.png",
+    initials: "FM"
   },
   {
-    id: "sphiwe",
-    name: "Sphiwe Chibwana",
+    id: "kondwani",
+    name: "Kondwani Luhana",
     role: "Business Solution Lead",
     category: "Solutions Architecture",
-    bio: "Business systems specialist analyzing corporate workflows, optimizing ERP implementations, and delivering tailored software solutions for operational efficiency.",
-    expertise: ["ERP Solutions", "Workflow Audits", "Systems Design"],
-    email: "schibwana@propindustries.com",
-    imageFileName: "sphiwe.png",
-    initials: "SC"
+    bio: "Business solution specialist analyzing corporate workflows, optimizing enterprise technology systems, and delivering tailored digital software solutions for operational efficiency.",
+    expertise: ["Business Solutions", "Workflow Audits", "Systems Design"],
+    email: "kluhana@propindustries.com",
+    imageFileName: "kondwani.png",
+    initials: "KL"
   },
   {
     id: "michael",
@@ -83,12 +83,41 @@ const teamMembers: TeamMember[] = [
   }
 ];
 
+const getCandidateImages = (fileName: string) => {
+  const firstName = fileName.split('.')[0].toLowerCase();
+  return [
+    `/images/gallery/${firstName}.png`,
+    `/gallery/${firstName}.png`,
+    `/${firstName}.png`,
+    `/images/${firstName}.png`,
+    `/images/gallery/${firstName}.PNG`,
+    `/images/gallery/${firstName}.jpg`,
+    `/images/gallery/${firstName}.jpeg`,
+    `/images/gallery/${firstName}.webp`,
+    `/images/gallery/${fileName}`,
+  ];
+};
+
 const Team = () => {
+  const [candidateIndices, setCandidateIndices] = useState<Record<string, number>>({});
   const [imgErrors, setImgErrors] = useState<Record<string, boolean>>({});
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
 
-  const handleImgError = (id: string) => {
-    setImgErrors(prev => ({ ...prev, [id]: true }));
+  const handleImgError = (id: string, fileName: string) => {
+    const candidates = getCandidateImages(fileName);
+    const currentIndex = candidateIndices[id] || 0;
+
+    if (currentIndex < candidates.length - 1) {
+      setCandidateIndices(prev => ({ ...prev, [id]: currentIndex + 1 }));
+    } else {
+      setImgErrors(prev => ({ ...prev, [id]: true }));
+    }
+  };
+
+  const getMemberImgSrc = (id: string, fileName: string) => {
+    const candidates = getCandidateImages(fileName);
+    const index = candidateIndices[id] || 0;
+    return candidates[index];
   };
 
   return (
@@ -129,11 +158,11 @@ const Team = () => {
           </motion.p>
         </div>
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {/* Team Grid (3x2 Grid for 6 Team Members) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 sm:gap-8 mb-16">
           {teamMembers.map((member, index) => {
             const hasError = imgErrors[member.id];
-            const primaryImgPath = `/images/gallery/${member.imageFileName}`;
+            const imgSrc = getMemberImgSrc(member.id, member.imageFileName);
 
             return (
               <motion.div
@@ -150,10 +179,10 @@ const Team = () => {
                   <div className="relative w-full aspect-square overflow-hidden bg-gradient-to-br from-[#4A0A10] via-[#8F131A] to-[#A71920]">
                     {!hasError ? (
                       <img 
-                        src={primaryImgPath} 
+                        src={imgSrc} 
                         alt={member.name}
-                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                        onError={() => handleImgError(member.id)}
+                        className="w-full h-full object-cover object-top filter grayscale contrast-[1.05] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+                        onError={() => handleImgError(member.id, member.imageFileName)}
                       />
                     ) : (
                       <div className="w-full h-full flex flex-col items-center justify-center p-6 text-white text-center relative">
@@ -253,10 +282,10 @@ const Team = () => {
                 <div className="relative w-full aspect-square max-h-80 bg-gradient-to-br from-[#4A0A10] via-[#8F131A] to-[#A71920] overflow-hidden">
                   {!imgErrors[selectedMember.id] ? (
                     <img 
-                      src={`/images/gallery/${selectedMember.imageFileName}`} 
+                      src={getMemberImgSrc(selectedMember.id, selectedMember.imageFileName)} 
                       alt={selectedMember.name}
-                      className="w-full h-full object-cover object-top"
-                      onError={() => handleImgError(selectedMember.id)}
+                      className="w-full h-full object-cover object-top filter grayscale contrast-[1.05] hover:grayscale-0 transition-all duration-700 ease-out"
+                      onError={() => handleImgError(selectedMember.id, selectedMember.imageFileName)}
                     />
                   ) : (
                     <div className="w-full h-full flex flex-col items-center justify-center p-6 text-white text-center">

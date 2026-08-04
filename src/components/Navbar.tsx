@@ -60,7 +60,9 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-[#4A0A10]/95 backdrop-blur-md py-3 shadow-xl border-b border-white/10' : 'bg-gradient-to-b from-[#4A0A10]/80 via-[#4A0A10]/40 to-transparent py-6'
+        isScrolled
+          ? 'bg-[#4A0A10]/95 backdrop-blur-md py-3 shadow-xl border-b border-white/10'
+          : 'bg-gradient-to-b from-[#4A0A10]/90 via-[#4A0A10]/50 to-transparent py-6'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">

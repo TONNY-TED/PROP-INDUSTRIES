@@ -196,7 +196,7 @@ const About = () => {
 
             <div className="mt-8 pt-4 border-t border-gray-100 flex items-center justify-between">
               <span className="text-xs text-gray-500 font-semibold">
-                Lilongwe, Malawi
+                Blantyre, Malawi
               </span>
               <span className="text-xs font-extrabold text-[#A71920] uppercase tracking-wider">
                 Built for Excellence

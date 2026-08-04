@@ -32,10 +32,10 @@ const services = [
     badge: "Smart Automation"
   },
   {
-    title: "Data Analytics",
-    description: "Data visualization, reporting dashboards, and actionable intelligence to back strategic decisions.",
+    title: "Data Analytics & Data Science",
+    description: "Sales analysis, profit & loss reports, best-selling insights, stock forecasting, and sales predictions to boost business growth with data.",
     icon: BarChart3,
-    badge: "Insights"
+    badge: "Smart Data Insights"
   },
   {
     title: "Graphic Design & Branding",

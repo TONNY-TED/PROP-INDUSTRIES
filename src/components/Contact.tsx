@@ -66,8 +66,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <div className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-0.5">Phone Number</div>
-                  <a href="tel:+2656464291" className="text-base sm:text-lg font-bold text-[#4A0A10] group-hover:text-[#A71920] transition-colors">
-                    +265 646 4291
+                  <a href="tel:+265996464291" className="text-base sm:text-lg font-bold text-[#4A0A10] group-hover:text-[#A71920] transition-colors">
+                    +265 996 464 291
                   </a>
                 </div>
               </div>
@@ -103,7 +103,7 @@ const Contact = () => {
                     rel="noopener noreferrer" 
                     className="text-base sm:text-lg font-bold text-[#4A0A10] group-hover:text-[#A71920] transition-colors flex items-center gap-2"
                   >
-                    Lilongwe, Malawi <span className="text-xs text-[#A71920] underline">(View Google Maps)</span>
+                    Blantyre, Malawi <span className="text-xs text-[#A71920] underline">(View Google Maps)</span>
                   </a>
                 </div>
               </div>

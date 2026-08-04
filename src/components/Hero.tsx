@@ -39,7 +39,7 @@ const Hero = () => {
         <motion.div
           key={currentIndex}
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.3 }}
+          animate={{ opacity: 0.55 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
           className="absolute inset-0"
@@ -52,7 +52,7 @@ const Hero = () => {
       </AnimatePresence>
 
       {/* Network Dots Background Effect & Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#4A0A10] via-[#A71920]/80 to-[#4A0A10] opacity-95" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#38070C]/90 via-[#A71920]/70 to-[#38070C]/90 opacity-75" />
       <div 
         className="absolute inset-0 opacity-15 pointer-events-none"
         style={{
