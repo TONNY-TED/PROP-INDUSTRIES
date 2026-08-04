@@ -59,13 +59,13 @@ const projects: Project[] = [
     tags: ['ICT Training', 'Mentorship', 'Digital Skills']
   },
   {
-    id: 'data-science-analytics',
-    title: 'Smart Data Science & Business Insights',
+    id: 'enterprise-software',
+    title: 'Enterprise ERP & Inventory',
     category: 'Business Solutions',
-    description: 'Turn business data into actionable growth with sales analysis, profit & loss reports, stock forecasting, sales predictions, customer behavior insights, and clean dashboards led by Certified Data Analyst Tonny Chibambo.',
-    imageFileName: 'data.png',
-    altNames: ['datascience.png', 'analytics.png', 'data.jpg', 'datascience.jpg', 'analytics.jpg', 'data-science.png', 'erp.png'],
-    tags: ['Data Science', 'Sales Analysis', 'Stock Forecasting', 'Business Insights']
+    description: 'Custom internal software designed to manage inventory, business operations, sales records, and financial analytics.',
+    imageFileName: 'erp.png',
+    altNames: ['erp.jpg', 'inventory.png', 'software.png', 'erp.jpeg'],
+    tags: ['Business Software', 'Analytics', 'Custom ERP']
   }
 ];
 
@@ -182,8 +182,8 @@ const Gallery = () => {
           ))}
         </div>
 
-        {/* Projects Grid (3x2 Grid for 6 Featured Projects) */}
-        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 sm:gap-8">
+        {/* Projects Grid */}
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence>
             {filteredProjects.map((project, index) => {
               const hasError = imgFailed[project.id];
