@@ -59,13 +59,13 @@ const projects: Project[] = [
     tags: ['ICT Training', 'Mentorship', 'Digital Skills']
   },
   {
-    id: 'enterprise-software',
-    title: 'Enterprise ERP & Inventory',
+    id: 'data-science-analytics',
+    title: 'Smart Data Science & Business Insights',
     category: 'Business Solutions',
-    description: 'Custom internal software designed to manage inventory, business operations, sales records, and financial analytics.',
-    imageFileName: 'erp.png',
-    altNames: ['erp.jpg', 'inventory.png', 'software.png', 'erp.jpeg'],
-    tags: ['Business Software', 'Analytics', 'Custom ERP']
+    description: 'Turn business data into actionable growth with sales analysis, profit & loss reports, stock forecasting, sales predictions, customer behavior insights, and clean dashboards led by Certified Data Analyst Tonny Chibambo.',
+    imageFileName: 'data.png',
+    altNames: ['datascience.png', 'analytics.png', 'data.jpg', 'datascience.jpg', 'analytics.jpg', 'data-science.png', 'erp.png'],
+    tags: ['Data Science', 'Sales Analysis', 'Stock Forecasting', 'Business Insights']
   }
 ];
 
@@ -182,8 +182,8 @@ const Gallery = () => {
           ))}
         </div>
 
-        {/* Projects Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Projects Grid (3x2 Grid for 6 Featured Projects) */}
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 sm:gap-8">
           <AnimatePresence>
             {filteredProjects.map((project, index) => {
               const hasError = imgFailed[project.id];
@@ -201,13 +201,13 @@ const Gallery = () => {
                   className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-200/80 group flex flex-col justify-between cursor-pointer transform hover:-translate-y-1"
                 >
                   <div>
-                    {/* Image Container with Grayscale-to-Color Transition & Fallback */}
-                    <div className="relative aspect-[16/10] bg-gradient-to-br from-[#4A0A10] via-[#8F131A] to-[#A71920] overflow-hidden">
+                    {/* Image Container - Cover Fit */}
+                    <div className="relative aspect-[16/10] bg-gradient-to-br from-[#2D060A] via-[#4A0A10] to-[#1E0407] overflow-hidden">
                       {!hasError ? (
                         <img 
                           src={imgSrc} 
                           alt={project.title}
-                          className="w-full h-full object-cover filter grayscale contrast-[1.05] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out opacity-90 group-hover:opacity-100"
+                          className="w-full h-full object-cover filter grayscale contrast-[1.05] group-hover:grayscale-0 group-hover:scale-110 transition-transform duration-500 ease-out"
                           onError={() => handleImageError(project.id, project)}
                         />
                       ) : (
@@ -226,7 +226,7 @@ const Gallery = () => {
                         {project.category}
                       </span>
 
-                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-xs">
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20">
                         <span className="bg-white text-[#4A0A10] font-bold text-xs px-4 py-2 rounded-full shadow-xl flex items-center gap-1.5 transform scale-90 group-hover:scale-100 transition-transform">
                           <ZoomIn size={14} className="text-[#A71920]" /> Click to View
                         </span>
@@ -287,7 +287,7 @@ const Gallery = () => {
                 </button>
 
                 {/* Modal Image */}
-                <div className="relative aspect-[16/10] bg-gradient-to-br from-[#4A0A10] via-[#8F131A] to-[#A71920] overflow-hidden">
+                <div className="relative w-full aspect-[16/10] bg-gradient-to-br from-[#2D060A] via-[#4A0A10] to-[#1A0306] overflow-hidden">
                   {!imgFailed[selectedProject.id] ? (
                     <img
                       src={getProjectSrc(selectedProject)}
@@ -344,7 +344,6 @@ const Gallery = () => {
       </div>
     </section>
   );
-  
 };
 
 export default Gallery;

@@ -59,16 +59,22 @@ const Contact = () => {
             </p>
 
             <div className="space-y-6">
-              {/* Phone */}
+              {/* Phone Numbers */}
               <div className="flex items-center gap-5 p-4 rounded-xl bg-gray-50 border border-gray-200/80 hover:border-[#A71920] transition-colors group">
                 <div className="w-12 h-12 bg-[#A71920] text-white flex items-center justify-center rounded-lg shadow-md group-hover:scale-110 transition-transform">
                   <Phone size={20} />
                 </div>
                 <div>
-                  <div className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-0.5">Phone Number</div>
-                  <a href="tel:+265996464291" className="text-base sm:text-lg font-bold text-[#4A0A10] group-hover:text-[#A71920] transition-colors">
-                    +265 996 464 291
-                  </a>
+                  <div className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-0.5">Phone Numbers</div>
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+                    <a href="tel:+265996464291" className="text-base font-bold text-[#4A0A10] group-hover:text-[#A71920] transition-colors">
+                      +265 996 464 291
+                    </a>
+                    <span className="hidden sm:inline text-gray-300">•</span>
+                    <a href="tel:+265888081368" className="text-base font-bold text-[#4A0A10] group-hover:text-[#A71920] transition-colors">
+                      +265 888 081 368
+                    </a>
+                  </div>
                 </div>
               </div>
               
@@ -96,7 +102,7 @@ const Contact = () => {
                   <MapPin size={20} />
                 </div>
                 <div>
-                  <div className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-0.5">Physical Address</div>
+                  <div className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-0.5">Physical Location</div>
                   <a 
                     href="https://maps.google.com/?q=Blantyre+Malawi" 
                     target="_blank" 
@@ -183,7 +189,7 @@ const Contact = () => {
                     <option value="Data Analytics">Data Analytics</option>
                     <option value="Graphic Design & Branding">Graphic Design & Branding</option>
                     <option value="IT Consulting">IT Consulting</option>
-                    <option value="Computer Training">Computer Training</option>
+                    <option value="Computer Lessons & Programming">Computer Lessons & Programming</option>
                     <option value="Networking & Hardware">Networking & Hardware</option>
                   </select>
                 </div>

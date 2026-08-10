@@ -75,9 +75,9 @@ public/
 - Filterable project grid featuring CareQueue, Prop Industries Website, Smart Health Watch, Business Branding, ICT Training, and Enterprise ERP.
 
 #### 5. Contact Us
-- **Phone:** `+265996464291`
+- **Phone:** `+265 646 4291`
 - **Email:** `info@propindustries.com` / `tonnychibambo@gmail.com`
-- **Location:** Blantyre, Malawi (Includes direct Google Maps link)
+- **Location:** Lilongwe, Malawi (Includes direct Google Maps link)
 - **Interactive Form:** Fill out to request quotes or schedule consultations.
 
 ---

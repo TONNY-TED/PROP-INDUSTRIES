@@ -50,10 +50,10 @@ const services = [
     badge: "Strategy"
   },
   {
-    title: "Computer Training",
-    description: "Practical ICT, digital literacy, and hands-on programming bootcamps for individuals and enterprise staff.",
+    title: "Computer Lessons & Programming",
+    description: "Hands-on computer lessons, digital literacy, and practical training in programming languages (Python, Web Development, Java, C++, & SQL) for students, professionals, and corporate teams.",
     icon: GraduationCap,
-    badge: "Skills & Ed"
+    badge: "Lessons & Coding"
   },
   {
     title: "Networking & Hardware",
@@ -102,9 +102,9 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-white/80 text-base sm:text-lg leading-relaxed"
+            className="text-white/90 text-base sm:text-lg leading-relaxed"
           >
-            We deliver comprehensive technology services designed to scale your operational capabilities and establish a distinct market presence.
+            We deliver comprehensive technology services — from enterprise software development and IoT systems to practical <span className="text-red-200 font-bold">computer lessons</span> and modern <span className="text-red-200 font-bold">programming language bootcamps</span> to elevate your team's technical capabilities.
           </motion.p>
         </div>
 
