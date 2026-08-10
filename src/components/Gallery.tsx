@@ -344,6 +344,7 @@ const Gallery = () => {
       </div>
     </section>
   );
+  
 };
 
 export default Gallery;

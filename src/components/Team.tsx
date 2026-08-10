@@ -158,8 +158,8 @@ const Team = () => {
           </motion.p>
         </div>
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {/* Team Grid (Grid view on mobile and desktop) */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3.5 sm:gap-8 mb-16">
           {teamMembers.map((member, index) => {
             const hasError = imgErrors[member.id];
             const imgSrc = getMemberImgSrc(member.id, member.imageFileName);
@@ -172,7 +172,7 @@ const Team = () => {
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ delay: index * 0.08 }}
                 onClick={() => setSelectedMember(member)}
-                className="bg-gray-50 border border-gray-200/80 rounded-2xl overflow-hidden hover:shadow-2xl hover:border-[#A71920]/40 transition-all duration-300 group flex flex-col justify-between cursor-pointer transform hover:-translate-y-1"
+                className="bg-gray-50 border border-gray-200/80 rounded-xl sm:rounded-2xl overflow-hidden hover:shadow-2xl hover:border-[#A71920]/40 transition-all duration-300 group flex flex-col justify-between cursor-pointer transform hover:-translate-y-1"
               >
                 <div>
                   {/* Large Square Image Container */}
@@ -185,50 +185,50 @@ const Team = () => {
                         onError={() => handleImgError(member.id, member.imageFileName)}
                       />
                     ) : (
-                      <div className="w-full h-full flex flex-col items-center justify-center p-6 text-white text-center relative">
+                      <div className="w-full h-full flex flex-col items-center justify-center p-3 sm:p-6 text-white text-center relative">
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.15)_0%,transparent_70%)] pointer-events-none" />
-                        <span className="text-6xl font-black tracking-wider text-white/90 drop-shadow-md mb-2">
+                        <span className="text-3xl sm:text-6xl font-black tracking-wider text-white/90 drop-shadow-md mb-1 sm:mb-2">
                           {member.initials}
                         </span>
-                        <span className="text-xs uppercase tracking-widest text-white/70 font-semibold max-w-[80%]">
+                        <span className="text-[10px] sm:text-xs uppercase tracking-widest text-white/70 font-semibold max-w-[90%] line-clamp-1">
                           {member.name}
                         </span>
                       </div>
                     )}
                     
-                    <span className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-md text-[#4A0A10] text-[10px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-md border border-gray-200/50 shadow-md">
+                    <span className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 bg-white/95 backdrop-blur-md text-[#4A0A10] text-[9px] sm:text-[10px] font-extrabold uppercase tracking-widest px-2 sm:px-3 py-0.5 sm:py-1 rounded-md border border-gray-200/50 shadow-md max-w-[90%] truncate">
                       {member.category}
                     </span>
 
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/30 backdrop-blur-xs">
-                      <span className="bg-white/90 text-[#4A0A10] font-bold text-xs px-3.5 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
-                        <ZoomIn size={14} className="text-[#A71920]" /> View Photo
+                      <span className="bg-white/90 text-[#4A0A10] font-bold text-[10px] sm:text-xs px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full shadow-lg flex items-center gap-1 sm:gap-1.5">
+                        <ZoomIn size={12} className="text-[#A71920] shrink-0" /> View Photo
                       </span>
                     </div>
                   </div>
 
                   {/* Info */}
-                  <div className="p-6 pb-2">
-                    <h4 className="text-xl font-bold text-[#4A0A10] mb-1 group-hover:text-[#A71920] transition-colors">
+                  <div className="p-3 sm:p-6 pb-2">
+                    <h4 className="text-base sm:text-xl font-bold text-[#4A0A10] mb-0.5 sm:mb-1 group-hover:text-[#A71920] transition-colors leading-tight">
                       {member.name}
                     </h4>
-                    <div className="text-xs font-bold text-[#A71920] uppercase tracking-wider mb-3">
+                    <div className="text-[10px] sm:text-xs font-bold text-[#A71920] uppercase tracking-wider mb-2 sm:mb-3 leading-snug">
                       {member.role}
                     </div>
 
-                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+                    <p className="text-gray-600 text-[11px] sm:text-sm leading-relaxed mb-3 sm:mb-4 line-clamp-3 sm:line-clamp-none">
                       {member.bio}
                     </p>
                   </div>
                 </div>
 
-                <div className="px-6 pb-6">
+                <div className="p-3 sm:p-6 pt-0">
                   {/* Expertise Badges */}
-                  <div className="flex flex-wrap gap-1.5 mb-5 pt-4 border-t border-gray-200/60">
+                  <div className="flex flex-wrap gap-1 sm:gap-1.5 mb-3 sm:mb-5 pt-2 sm:pt-4 border-t border-gray-200/60">
                     {member.expertise.map((skill) => (
                       <span 
                         key={skill} 
-                        className="text-[10px] font-bold bg-white text-gray-700 px-2.5 py-1 rounded-md border border-gray-200 shadow-2xs"
+                        className="text-[9px] sm:text-[10px] font-bold bg-white text-gray-700 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md border border-gray-200 shadow-2xs"
                       >
                         {skill}
                       </span>
@@ -240,12 +240,12 @@ const Team = () => {
                     <a 
                       href={`mailto:${member.email}`} 
                       onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#4A0A10] hover:text-[#A71920] transition-colors"
+                      className="inline-flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs font-bold text-[#4A0A10] hover:text-[#A71920] transition-colors"
                     >
-                      <Mail size={14} className="text-[#A71920]" /> Direct Contact
+                      <Mail size={12} className="text-[#A71920] shrink-0" /> <span className="hidden xs:inline">Direct</span> Contact
                     </a>
-                    <div className="p-1.5 rounded-md bg-white border border-gray-200 text-gray-400 group-hover:text-[#A71920] group-hover:border-[#A71920]/30 transition-colors">
-                      <UserCheck size={14} />
+                    <div className="p-1 sm:p-1.5 rounded-md bg-white border border-gray-200 text-gray-400 group-hover:text-[#A71920] group-hover:border-[#A71920]/30 transition-colors">
+                      <UserCheck size={12} />
                     </div>
                   </div>
                 </div>
