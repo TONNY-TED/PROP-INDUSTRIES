@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Mail, Phone, MessageCircle, UserCheck, X, ZoomIn, ArrowLeft } from 'lucide-react';
+import { Mail, Phone, MessageCircle, UserCheck, X, ZoomIn, ArrowLeft, ExternalLink } from 'lucide-react';
 
 interface TeamMember {
   id: string;
@@ -12,6 +12,7 @@ interface TeamMember {
   email: string;
   phone?: string;
   whatsapp?: string;
+  externalLink?: { label: string; url: string };
   imageFileName: string;
   initials: string;
 }
@@ -65,11 +66,15 @@ const teamMembers: TeamMember[] = [
   {
     id: "tendai",
     name: "Tendai Tchovan",
-    role: "Lead Software Engineer",
-    category: "Engineering & Web",
-    bio: "Full-stack software architect developing high-performance web applications, scalable database systems, and secure API integrations for enterprise web platforms.",
-    expertise: ["Full-Stack Web", "Database Architecture", "Cloud APIs"],
+    role: "CEO at Tchovolts Electrical Services & Lead Software Engineer at Prop Industries",
+    category: "Executive & Engineering",
+    bio: "CEO at Tchovolts Electrical Services and Lead Software Engineer at Prop Industries, leading electrical engineering & power installation solutions alongside enterprise full-stack web and database architecture.",
+    expertise: ["Tchovolts CEO", "Electrical Engineering", "Full-Stack Web", "Database Architecture"],
     email: "ttchovan@propindustries.com",
+    externalLink: {
+      label: "Tchovolts Electrical Services",
+      url: "https://www.facebook.com/profile.php?id=61592083242843"
+    },
     imageFileName: "tendai.png",
     initials: "TT"
   },
@@ -396,6 +401,17 @@ const Team = () => {
                           className="inline-flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white px-5 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md hover:shadow-lg flex-1"
                         >
                           <Phone size={16} /> Call: {selectedMember.phone}
+                        </a>
+                      )}
+
+                      {selectedMember.externalLink && (
+                        <a
+                          href={selectedMember.externalLink.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center gap-2 bg-[#1877F2] hover:bg-[#166FE5] text-white px-5 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md hover:shadow-lg flex-1"
+                        >
+                          <ExternalLink size={16} /> {selectedMember.externalLink.label}
                         </a>
                       )}
                     </div>
