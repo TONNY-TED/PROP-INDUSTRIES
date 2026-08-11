@@ -63,15 +63,15 @@ const teamMembers: TeamMember[] = [
     initials: "KL"
   },
   {
-    id: "michael",
-    name: "Michael Chimp",
+    id: "tendai",
+    name: "Tendai Tchovan",
     role: "Lead Software Engineer",
     category: "Engineering & Web",
     bio: "Full-stack software architect developing high-performance web applications, scalable database systems, and secure API integrations for enterprise web platforms.",
     expertise: ["Full-Stack Web", "Database Architecture", "Cloud APIs"],
-    email: "mchimp@propindustries.com",
-    imageFileName: "michael.png",
-    initials: "MC"
+    email: "ttchovan@propindustries.com",
+    imageFileName: "tendai.png",
+    initials: "TT"
   },
   {
     id: "tiyamike",
