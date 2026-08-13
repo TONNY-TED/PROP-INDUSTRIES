@@ -1,60 +1,16 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
-
-const images = [
-  "/images/hero/slide-1.jpg",
-  "/images/hero/slide-2.jpg",
-  "/images/hero/slide-3.jpg",
-  "/images/hero/slide-4.jpg",
-  "/images/hero/slide-5.jpg"
-];
+import React from 'react';
+import { ArrowRight, ShieldCheck, Zap } from 'lucide-react';
+import { motion } from 'motion/react';
 
 const Hero = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-
-  const nextSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  }, []);
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
-
-  useEffect(() => {
-    if (isPaused) return;
-    const interval = setInterval(nextSlide, 2000);
-    return () => clearInterval(interval);
-  }, [nextSlide, isPaused]);
-
   return (
     <section 
-      className="relative min-h-[70vh] lg:min-h-[80vh] w-full overflow-hidden bg-[#4A0A10] flex items-center justify-center pt-24 sm:pt-28 pb-12 sm:pb-16"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      className="relative min-h-[65vh] lg:min-h-[75vh] w-full overflow-hidden bg-gradient-to-br from-[#4A0A10] via-[#38070C] to-[#280407] flex items-center justify-center pt-24 sm:pt-28 pb-12 sm:pb-16"
     >
-      {/* Background Image Carousel with Crimson & Burgundy Overlay */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentIndex}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.55 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-          className="absolute inset-0"
-        >
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[4000ms] scale-105"
-            style={{ backgroundImage: `url(${images[currentIndex]})` }}
-          />
-        </motion.div>
-      </AnimatePresence>
-
-      {/* Network Dots Background Effect & Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#38070C]/90 via-[#A71920]/70 to-[#38070C]/90 opacity-75" />
+      {/* Subtle Network Pattern & Brand Accent Glow */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-[#A71920]/20 via-transparent to-[#A71920]/10 pointer-events-none" />
       <div 
-        className="absolute inset-0 opacity-15 pointer-events-none"
+        className="absolute inset-0 opacity-10 pointer-events-none"
         style={{
           backgroundImage: `radial-gradient(#ffffff 1.5px, transparent 1.5px)`,
           backgroundSize: '32px 32px'
@@ -143,38 +99,9 @@ const Hero = () => {
           </div>
         </motion.div>
       </div>
-
-      {/* Slide Arrow Navigation */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-6 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-black/20 hover:bg-white/20 text-white transition-colors hidden md:block"
-        aria-label="Previous Slide"
-      >
-        <ChevronLeft size={28} />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-6 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-black/20 hover:bg-white/20 text-white transition-colors hidden md:block"
-        aria-label="Next Slide"
-      >
-        <ChevronRight size={28} />
-      </button>
-
-      {/* Slide Indicators */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`h-2 transition-all duration-300 rounded-full ${
-              currentIndex === index ? 'w-8 bg-white' : 'w-2 bg-white/40'
-            }`}
-            aria-label={`Slide ${index + 1}`}
-          />
-        ))}
-      </div>
     </section>
   );
 };
 
 export default Hero;
+
