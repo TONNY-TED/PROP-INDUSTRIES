@@ -49,6 +49,10 @@ const teamMembers: TeamMember[] = [
     expertise: ["Graphic Design", "ICT Training", "Community Leadership", "Brand Identity"],
     email: "designwithepic@gmail.com",
     phone: "+265 888 04 04 53",
+    externalLink: {
+      label: "Visit Site (EPIC INC)",
+      url: "https://francis-manjomo-portfolio.vercel.app/"
+    },
     imageFileName: "francis.png",
     initials: "FM"
   },
@@ -263,15 +267,29 @@ const Team = () => {
                   </div>
 
                   {/* Contact Action */}
-                  <div className="flex items-center justify-between pt-1">
-                    <a 
-                      href={`mailto:${member.email}`} 
-                      onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs font-bold text-[#4A0A10] hover:text-[#A71920] transition-colors"
-                    >
-                      <Mail size={12} className="text-[#A71920] shrink-0" /> <span className="hidden xs:inline">Direct</span> Contact
-                    </a>
-                    <div className="p-1 sm:p-1.5 rounded-md bg-white border border-gray-200 text-gray-400 group-hover:text-[#A71920] group-hover:border-[#A71920]/30 transition-colors">
+                  <div className="flex items-center justify-between pt-1 gap-2">
+                    <div className="flex items-center gap-2.5 flex-wrap">
+                      <a 
+                        href={`mailto:${member.email}`} 
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs font-bold text-[#4A0A10] hover:text-[#A71920] transition-colors"
+                      >
+                        <Mail size={12} className="text-[#A71920] shrink-0" /> <span className="hidden xs:inline">Direct</span> Contact
+                      </a>
+
+                      {member.externalLink && (
+                        <a
+                          href={member.externalLink.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-flex items-center gap-1 text-[10px] sm:text-xs font-bold text-[#A71920] hover:text-[#4A0A10] underline transition-colors"
+                        >
+                          <ExternalLink size={11} className="shrink-0" /> {member.externalLink.label}
+                        </a>
+                      )}
+                    </div>
+                    <div className="p-1 sm:p-1.5 rounded-md bg-white border border-gray-200 text-gray-400 group-hover:text-[#A71920] group-hover:border-[#A71920]/30 transition-colors shrink-0">
                       <UserCheck size={12} />
                     </div>
                   </div>
@@ -376,10 +394,10 @@ const Team = () => {
 
                   {/* Actions Footer */}
                   <div className="pt-6 border-t border-gray-100 flex flex-col gap-3">
-                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 flex-wrap">
                       <a
                         href={`mailto:${selectedMember.email}`}
-                        className="inline-flex items-center justify-center gap-2 bg-[#4A0A10] hover:bg-[#A71920] text-white px-5 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md hover:shadow-lg flex-1"
+                        className="inline-flex items-center justify-center gap-2 bg-[#4A0A10] hover:bg-[#A71920] text-white px-5 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md hover:shadow-lg flex-1 min-w-[180px]"
                       >
                         <Mail size={16} /> Direct Email ({selectedMember.email})
                       </a>
@@ -389,7 +407,7 @@ const Team = () => {
                           href={`https://wa.me/${selectedMember.whatsapp.replace(/[^0-9]/g, '')}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md hover:shadow-lg flex-1"
+                          className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md hover:shadow-lg flex-1 min-w-[180px]"
                         >
                           <MessageCircle size={16} /> WhatsApp ({selectedMember.whatsapp})
                         </a>
@@ -398,7 +416,7 @@ const Team = () => {
                       {selectedMember.phone && !selectedMember.whatsapp && (
                         <a
                           href={`tel:${selectedMember.phone.replace(/\s+/g, '')}`}
-                          className="inline-flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white px-5 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md hover:shadow-lg flex-1"
+                          className="inline-flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white px-5 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md hover:shadow-lg flex-1 min-w-[180px]"
                         >
                           <Phone size={16} /> Call: {selectedMember.phone}
                         </a>
@@ -409,7 +427,7 @@ const Team = () => {
                           href={selectedMember.externalLink.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center gap-2 bg-[#1877F2] hover:bg-[#166FE5] text-white px-5 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md hover:shadow-lg flex-1"
+                          className="inline-flex items-center justify-center gap-2 bg-[#1877F2] hover:bg-[#166FE5] text-white px-5 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md hover:shadow-lg flex-1 min-w-[180px]"
                         >
                           <ExternalLink size={16} /> {selectedMember.externalLink.label}
                         </a>
