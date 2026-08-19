@@ -76,8 +76,8 @@ const teamMembers: TeamMember[] = [
     expertise: ["Tchovolts CEO", "Electrical Engineering", "Full-Stack Web", "Database Architecture"],
     email: "ttchovan@propindustries.com",
     externalLink: {
-      label: "Tchovolts Electrical Services",
-      url: "https://www.facebook.com/profile.php?id=61592083242843"
+      label: "Visit Site (TCHOvolts Electrical Services)",
+      url: "https://tchovolts-electrical-services.vercel.app/"
     },
     imageFileName: "tendai.png",
     initials: "TT"

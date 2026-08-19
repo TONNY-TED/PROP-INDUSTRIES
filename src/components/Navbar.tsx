@@ -5,32 +5,21 @@ import { motion, AnimatePresence } from 'motion/react';
 const LOGO_CANDIDATES = [
   '/images/gallery/logo.png',
   '/gallery/logo.png',
+  '/images/gallery/prop.png',
+  '/gallery/prop.png',
   '/images/gallery/logo.PNG',
   '/gallery/logo.PNG',
   '/images/gallery/logo.jpg',
-  '/images/gallery/prop.png',
-  '/prop.png',
+  '/images/logo.png',
   '/logo.png',
   '/images/prop.png',
-  '/images/logo.png',
-  '/prop.jpg',
-  '/logo.jpg',
-  '/prop.jpeg',
-  '/logo.jpeg',
-  '/prop.svg',
-  '/logo.svg',
-  '/prop.PNG',
-  '/logo.PNG',
-  '/images/prop.PNG',
-  '/images/logo.PNG',
-  '/images/prop-industries-logo.png',
+  '/prop.png',
 ];
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [logoIndex, setLogoIndex] = useState(0);
-  const [hasLogoError, setHasLogoError] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,8 +32,6 @@ const Navbar = () => {
   const handleLogoError = () => {
     if (logoIndex < LOGO_CANDIDATES.length - 1) {
       setLogoIndex((prev) => prev + 1);
-    } else {
-      setHasLogoError(true);
     }
   };
 
@@ -68,23 +55,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
         <a href="/" className="flex items-center shrink-0 group">
-          {!hasLogoError ? (
-            <img 
-              src={LOGO_CANDIDATES[logoIndex]} 
-              alt="Prop Industries Logo" 
-              className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105"
-              onError={handleLogoError}
-            />
-          ) : (
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#A71920] to-[#4A0A10] flex items-center justify-center border border-white/20 shadow-md group-hover:scale-105 transition-transform">
-                <span className="text-white font-black text-xl tracking-wider uppercase">P</span>
-              </div>
-              <span className="text-white font-extrabold text-lg tracking-tight">
-                PROP <span className="text-[#A71920]">INDUSTRIES</span>
-              </span>
-            </div>
-          )}
+          <img 
+            src={LOGO_CANDIDATES[logoIndex]} 
+            alt="Prop Industries Logo" 
+            className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105 filter drop-shadow-sm"
+            onError={handleLogoError}
+          />
         </a>
 
         {/* Desktop Navigation */}
