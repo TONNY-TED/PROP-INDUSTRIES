@@ -4,7 +4,7 @@ import React from "react";
 import { SplineScene } from "@/components/ui/splite";
 import { Card } from "@/components/ui/card";
 import { Spotlight } from "@/components/ui/spotlight";
-import { Sparkles, ArrowRight, Layers, Cpu, Compass } from "lucide-react";
+import { ArrowRight, ShieldCheck, Briefcase, CheckCircle2, Award } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function SplineSceneBasic() {
@@ -32,16 +32,17 @@ export function SplineSceneBasic() {
                 transition={{ duration: 0.5 }}
               >
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#A71920]/20 border border-[#A71920]/40 text-[#ff8088] text-xs font-bold uppercase tracking-widest w-fit mb-5 shadow-sm">
-                  <Sparkles size={14} className="text-[#ff8088] animate-pulse" />
-                  <span>3D Digital Innovation</span>
+                  <Award size={14} className="text-[#ff8088] animate-pulse" />
+                  <span>Built to Deliver</span>
                 </div>
 
                 <h3 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-tight">
-                  Interactive <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-red-200 to-[#ff8088]">3D & Spatial</span> Systems
+                  Innovation at Heart. <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-red-200 to-[#ff8088]">Reliability in Every Contract.</span>
                 </h3>
                 
                 <p className="mt-4 text-red-100/80 max-w-xl text-sm sm:text-base leading-relaxed">
-                  Complementing our software and web solutions, Prop Industries develops real-time 3D web applications, interactive product models, and IoT robotic telemetry simulations engineered for high-performance interactivity.
+                  At Prop Industries, capability meets dedication. Beyond smart software, IoT robotics, and digital solutions, we also specialize in <strong className="text-white font-semibold">general trade, procurement, and diverse contract fulfillment</strong>. Give us the contract—whatever the challenge—and our team will make it happen with precision and excellence.
                 </p>
 
                 <div className="mt-7 flex flex-wrap items-center gap-4">
@@ -49,21 +50,21 @@ export function SplineSceneBasic() {
                     href="#contact"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#A71920] to-[#780e14] text-white font-bold text-sm tracking-wide shadow-lg shadow-[#A71920]/40 hover:shadow-[#A71920]/70 hover:scale-[1.02] active:scale-[0.98] transition-all"
                   >
-                    <span>Launch Project</span>
+                    <span>Partner With Us</span>
                     <ArrowRight size={16} />
                   </a>
 
                   <div className="flex items-center gap-3 text-xs text-red-200/80 font-medium">
                     <span className="flex items-center gap-1.5">
-                      <Layers size={14} className="text-[#ff8088]" /> WebGL & Spline
+                      <Briefcase size={14} className="text-[#ff8088]" /> Technology & Trade
                     </span>
                     <span className="text-red-800">•</span>
                     <span className="flex items-center gap-1.5">
-                      <Cpu size={14} className="text-[#ff8088]" /> IoT Simulation
+                      <ShieldCheck size={14} className="text-[#ff8088]" /> Dependable Fulfillment
                     </span>
                     <span className="text-red-800 hidden sm:inline">•</span>
                     <span className="hidden sm:flex items-center gap-1.5">
-                      <Compass size={14} className="text-[#ff8088]" /> 60fps Native
+                      <CheckCircle2 size={14} className="text-[#ff8088]" /> Client-First Commitment
                     </span>
                   </div>
                 </div>
