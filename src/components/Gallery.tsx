@@ -41,6 +41,15 @@ const projects: Project[] = [
     tags: ['IoT', 'Embedded Sensors', 'Real-Time Telemetry']
   },
   {
+    id: 'surveillance-robot',
+    title: 'Surveillance & Exploration Robot',
+    category: 'IoT Projects',
+    description: 'This robot can be used to access and explore places that are difficult or unsafe for people to reach. It can also be equipped with a camera, allowing users to remotely monitor, inspect, and capture images or video from hard-to-reach areas, and can also be equipped with an ultrasonic sensor to avoid obstacles.',
+    imageFileName: 'robot.png',
+    altNames: ['robot.jpg', 'robot.jpeg', 'robot.PNG', 'robot.JPG', 'robot-rover.png', 'rover.png', 'rover.jpg', 'iot-robot.png', 'iot-robot.jpg'],
+    tags: ['IoT Robotics', 'Remote Surveillance', 'Obstacle Avoidance', 'Camera Inspection']
+  },
+  {
     id: 'business-branding',
     title: 'Business Branding Package',
     category: 'Branding & Design',
