@@ -11,6 +11,7 @@ import Ecosystem from './components/Ecosystem';
 import Team from './components/Team';
 import Gallery from './components/Gallery';
 import { CoverFlowCarousel } from './components/ui/3-d-coverflow-carousel';
+import SplineSceneBasic from './components/ui/spline-scene-demo';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -21,6 +22,7 @@ export default function App() {
       <main>
         <Hero />
         <About />
+        <SplineSceneBasic />
         <Services />
         <Ecosystem />
         <Team />

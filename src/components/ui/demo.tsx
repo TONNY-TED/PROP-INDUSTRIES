@@ -1,9 +1,40 @@
-import { CoverFlowCarousel } from "./3-d-coverflow-carousel";
+'use client'
 
-export default function Demo() {
+import React from "react";
+import { SplineScene } from "@/components/ui/splite";
+import { Card } from "@/components/ui/card";
+import { Spotlight } from "@/components/ui/spotlight";
+ 
+export function SplineSceneBasic() {
   return (
-    <div className="w-full min-h-screen bg-[#160305] flex items-center justify-center">
-      <CoverFlowCarousel />
-    </div>
+    <Card className="w-full h-[500px] bg-[#160305]/95 border border-[#A71920]/30 relative overflow-hidden">
+      <Spotlight
+        className="-top-40 left-0 md:left-60 md:-top-20"
+        fill="#A71920"
+      />
+      
+      <div className="flex h-full flex-col md:flex-row">
+        {/* Left content */}
+        <div className="flex-1 p-8 relative z-10 flex flex-col justify-center">
+          <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white via-red-100 to-red-300">
+            Interactive 3D
+          </h1>
+          <p className="mt-4 text-red-100/80 max-w-lg">
+            Bring your UI to life with beautiful 3D scenes. Create immersive experiences 
+            that capture attention and enhance your design.
+          </p>
+        </div>
+
+        {/* Right content */}
+        <div className="flex-1 relative min-h-[300px]">
+          <SplineScene 
+            scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+            className="w-full h-full"
+          />
+        </div>
+      </div>
+    </Card>
   );
 }
+
+export default SplineSceneBasic;
