@@ -45,7 +45,7 @@ const Footer = () => {
                 <img 
                   src={LOGO_CANDIDATES[logoIndex]} 
                   alt="Prop Industries Logo" 
-                  className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105 filter drop-shadow-md"
+                  className="h-12 sm:h-16 w-auto object-contain transition-transform group-hover:scale-105 filter drop-shadow-md"
                   onError={handleLogoError}
                 />
               ) : (
