@@ -43,9 +43,9 @@ const teamMembers: TeamMember[] = [
   {
     id: "francis",
     name: "Francis Manjomo",
-    role: "CEO at Epic Inc., Graphic Designer, ICT Trainer & Community Lead",
+    role: "CEO at Epic Inc., Graphic Designer, ICT Trainer & Community Lead at Prop Industries",
     category: "Creative & ICT Lead",
-    bio: "CEO at Epic Inc., creative graphic designer, ICT trainer, and community lead driving brand design, digital media, workforce training, and youth community development.",
+    bio: "CEO at Epic Inc., and creative graphic designer, ICT trainer, and community lead driving brand design, digital media, workforce training, and youth community development at Prop Industries.",
     expertise: ["Graphic Design", "ICT Training", "Community Leadership", "Brand Identity"],
     email: "designwithepic@gmail.com",
     phone: "+265 888 04 04 53",

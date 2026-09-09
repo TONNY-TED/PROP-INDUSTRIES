@@ -17,7 +17,7 @@ const About = () => {
   const stats = [
     { value: "2+", label: "Year of Innovation", desc: "Delivering continuous tech breakthroughs" },
     { value: "10+", label: "Projects Completed", desc: "Deployed software & IoT solutions" },
-    { value: "10+", label: "Happy Clients", desc: "Corporate & enterprise partners" },
+    { value: "10+", label: "Happy Clients", desc: "Corporate & enterprise partners" }, 
     { value: "100%", label: "Quality Commitment", desc: "Rigorous standards & uptime" }
   ];
 
