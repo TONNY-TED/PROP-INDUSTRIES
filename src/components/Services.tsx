@@ -92,9 +92,12 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-6 leading-snug"
           >
-            Empowering Business Through <span className="text-[#A71920] bg-white px-2 py-0.5 rounded-md">Smart Solutions</span>
+            Empowering Business Through{' '}
+            <span className="inline-block max-w-full text-[#A71920] bg-white px-3 py-1 rounded-md leading-tight align-baseline mt-1">
+              Smart Solutions
+            </span>
           </motion.h3>
 
           <motion.p 

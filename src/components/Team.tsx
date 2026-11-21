@@ -69,11 +69,11 @@ const teamMembers: TeamMember[] = [
   },
   {
     id: "tendai",
-    name: "Tendai Tchovani",
-    role: "Tchovolts Electrical Services & Lead Electrical Engineer at Prop Industries",
+    name: "Tendai Tchovan",
+    role: "CEO at Tchovolts Electrical Services & Lead Software Engineer at Prop Industries",
     category: "Executive & Engineering",
-    bio: "Electrical engineering professional responsible for leading electrical engineering projects, power systems development, technical installations, and engineering solutions at Prop Industries, with a focus on reliable, practical, and innovative technology-driven systems.",
-    expertise: ["Electrical Engineering", "Power Systems", "Industrial Electrical Systems", "Technical Project Leadership"],
+    bio: "CEO at Tchovolts Electrical Services and Lead Software Engineer at Prop Industries, leading electrical engineering & power installation solutions alongside enterprise full-stack web and database architecture.",
+    expertise: ["Tchovolts CEO", "Electrical Engineering", "Full-Stack Web", "Database Architecture"],
     email: "ttchovan@propindustries.com",
     externalLink: {
       label: "Visit Site (TCHOvolts Electrical Services)",

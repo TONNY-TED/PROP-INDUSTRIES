@@ -75,6 +75,24 @@ const projects: Project[] = [
     imageFileName: 'data.png',
     altNames: ['datascience.png', 'analytics.png', 'data.jpg', 'datascience.jpg', 'analytics.jpg', 'data-science.png', 'erp.png'],
     tags: ['Data Science', 'Sales Analysis', 'Stock Forecasting', 'Business Insights']
+  },
+  {
+    id: 'business-portfolios',
+    title: 'Business Portfolios (Web & Docs)',
+    category: 'Branding & Design',
+    description: 'Professional business portfolios across both web and document formats, complemented by custom business cards, company profiles, and executive corporate stationery.',
+    imageFileName: 'business.png',
+    altNames: ['business.jpg', 'business.jpeg', 'business.PNG', 'business.JPG', 'business.JPEG'],
+    tags: ['Web Portfolios', 'Doc Portfolios', 'Business Cards', 'Corporate Profiles']
+  },
+  {
+    id: 'voice-health-assistant',
+    title: 'Health Assistance (Voice Health)',
+    category: 'Web Applications',
+    description: 'Interactive voice-assisted health platform enabling users to speak naturally to receive practical wellness guidance, healthy living tips, and everyday health advice.',
+    imageFileName: 'voice.png',
+    altNames: ['voice.jpeg', 'voice.jpg', 'voice.PNG', 'voice.JPG', 'voice.JPEG'],
+    tags: ['Voice Health', 'Wellness Advice', 'Healthcare Tech', 'Voice Assistant']
   }
 ];
 
